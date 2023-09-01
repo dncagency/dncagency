@@ -52,7 +52,7 @@
 
 	</head>
 	<body>
-		<audio autoplay controls>
+		<audio autoplay>
    		<source src="Better Today-Coffey Anderson.mp3" type="audio/mpeg">
 		</audio>
 <script>
@@ -65,6 +65,15 @@
   audio.addEventListener("pause", function() {
     console.log("Audio is paused");
   });
+
+// Check if the device is a mobile device
+if (window.matchMedia("(max-width: 768px)").matches) {
+  // Add a listener to the play event
+  audio.addEventListener("play", function() {
+    // Do not mute the audio
+    audio.muted = false;
+  });
+	
 </script>
 	</div>
 	<div class="fh5co-loader"></div>
