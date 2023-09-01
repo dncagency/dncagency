@@ -52,10 +52,15 @@
 
 	</head>
 	<body>
-		<audio autoplay>
+	<script>
+		var settingAutoplay = 'yes';
+		window.settingAutoplay = settingAutoplay === 'disable' ? false : true;
+		</script>
+		<div id="audio-container" class="audio-box">		
+		<audio id="song" loop>
    		<source src="Better Today-Coffey Anderson.mp3" type="audio/mpeg">
 		</audio>
-<script>
+	<script>
   let audio = document.querySelector("audio");
 
   audio.addEventListener("play", function() {
