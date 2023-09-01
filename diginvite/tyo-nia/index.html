@@ -257,36 +257,35 @@
     });
 	</script>
 <script>
-    // Get the source code of the HTML document
-    const source = document.querySelector("body").innerHTML;
+// Get the source code of the HTML document
+const source = document.querySelector("body").innerHTML;
 
-    // Create a function to update the source code
-    function updateSource(newSource) {
-        document.getElementById("source").innerHTML = newSource;
-        const sourceLines = newSource.split("\n");
-        const sourceWidth = sourceLines.reduce((acc, line) => acc + line.length, 0);
-        const sourceHeight = sourceLines.length;
-        const containerWidth = window.innerWidth;
-        if (sourceWidth > containerWidth) {
-            document.getElementById("source-container").style.width = sourceWidth + "px";
-        } else {
-            const maxWidth = 1000;
-            if (sourceWidth > maxWidth) {
-                document.getElementById("source-container").style.width = maxWidth + "px";
-            } else {
-                document.getElementById("source-container").style.width = sourceWidth + "px";
-            }
-        }
-    }
-// Replace %20 with space
-const newSource = newSource.replace(/%20/g, " ");
-document.getElementById("source").innerHTML = newSource;
+// Create a function to update the source code
+function updateSource(newSource) {
+  // Replace %20 with space
+  newSource = decodeURIComponent(newSource.replace(/\+/g, " "));
+  
+  document.getElementById("source").textContent = newSource;
+  const sourceLines = newSource.split("\n");
+  const sourceWidth = sourceLines.reduce((acc, line) => Math.max(acc, line.length), 0);
+  const sourceHeight = sourceLines.length;
+  const containerWidth = window.innerWidth;
+  const maxWidth = 1000;
 
-	// Get the new source code from the link
-	const newSource = window.location.search.replace("?tamu=", "");
+  if (sourceWidth > containerWidth) {
+    document.getElementById("source-container").style.width = sourceWidth + "px";
+  } else if (sourceWidth > maxWidth) {
+    document.getElementById("source-container").style.width = maxWidth + "px";
+  } else {
+    document.getElementById("source-container").style.width = sourceWidth + "px";
+  }
+}
 
-	// Update the source code
-	updateSource(newSource);
+// Get the new source code from the link
+const newSource = window.location.search.replace("?tamu=", "");
+
+// Update the source code
+updateSource(newSource);
 	</script>
 	
 	
