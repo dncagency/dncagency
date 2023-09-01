@@ -278,6 +278,10 @@ function updateSource(newSource) {
     }
   }
 }
+  // Replace %20 with space
+  const newSource = newSource.replace(/%20/g, " ");
+  document.getElementById("source").innerHTML = newSource;
+}
 	// Get the new source code from the link
 	const newSource = window.location.search.replace("?tamu=", "");
 	
