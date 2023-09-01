@@ -56,31 +56,12 @@
 		var settingAutoplay = 'yes';
 		window.settingAutoplay = settingAutoplay === 'disable' ? false : true;
 		document.getElementById("song").play();
-		</script>
+	</script>
 		<div id="audio-container" class="audio-box">		
 		<audio id="song" loop>
    		<source src="Better Today-Coffey Anderson.mp3" type="audio/mpeg">
 		</audio>
-	<script>
-  let audio = document.querySelector("audio");
 
-  audio.addEventListener("play", function() {
-    console.log("Audio is playing");
-  });
-
-  audio.addEventListener("pause", function() {
-    console.log("Audio is paused");
-  });
-
-// Check if the device is a mobile device
-if (window.matchMedia("(max-width: 768px)").matches) {
-  // Add a listener to the play event
-  audio.addEventListener("play", function() {
-    // Do not mute the audio
-    audio.muted = false;
-  });
-	
-</script>
 	</div>
 	<div class="fh5co-loader"></div>
 	
