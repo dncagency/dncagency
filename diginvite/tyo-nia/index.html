@@ -53,7 +53,21 @@
 	</head>
 	<body>
 	<div class="fh5co-loader"></div>
-	
+	<audio id="myAudio">
+    <source src="Better Today-Coffey Anderson.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+    var audio = document.getElementById("myAudio");
+
+    // Fungsi untuk memulai pemutaran audio setelah interaksi pengguna
+    function playAudio() {
+        audio.play();
+    }
+
+    // Panggil fungsi playAudio() saat halaman dimuat
+    window.onload = playAudio;
+</script>
 	<div id="page">
 	<nav class="fh5co-nav" role="navigation">
 		<div class="container">
@@ -65,9 +79,6 @@
 		</div>
 	</nav>
 
-		<audio autoplay>
-			<source src="Better Today-Coffey Anderson.mp3" type="audio/mpeg" >
-		</audio>
 		
 	<header id="fh5co-header" class="fh5co-cover" role="banner" style="background-image:url(images/img_bg_2.jpg);" data-stellar-background-ratio="0.5">
 		<div class="overlay"></div>
