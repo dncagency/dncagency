@@ -8,8 +8,8 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Undangan Pernikahan &mdash; Tyo & Nia</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="Free HTML5 Template by FREEHTML5.CO" />
-	<meta name="keywords" content="free html5, free template, free bootstrap, html5, css3, mobile first, responsive" />
+  	<meta name="description" content="Website Undangan Pernikahan" />
+   	<meta name="keywords" content="undangan digital, undangan pernikahan, website undangan, undangan" />
 	<meta name="author" content="FREEHTML5.CO" />
 
  
@@ -257,47 +257,34 @@
     });
 	</script>
 <script>
-// Get the source code of the HTML document
-const source = document.querySelector("body").innerHTML;
+    // Get the source code of the HTML document
+    const source = document.querySelector("body").innerHTML;
 
-// Create a function to update the source code
-function updateSource(newSource) {
-  document.getElementById("source").innerHTML = newSource;
-  const sourceLines = newSource.split("\n");
-  const sourceWidth = sourceLines.reduce((acc, line) => acc + line.length, 0);
-  const sourceHeight = sourceLines.length;
-  const containerWidth = window.innerWidth;
-  if (sourceWidth > containerWidth) {
-    document.getElementById("source-container").style.width = sourceWidth + "px";
-  } else {
-    const maxWidth = 1000;
-    if (sourceWidth > maxWidth) {
-      document.getElementById("source-container").style.width = maxWidth + "px";
-    } else {
-      document.getElementById("source-container").style.width = sourceWidth + "px";
+    // Create a function to update the source code
+    function updateSource(newSource) {
+        document.getElementById("source").innerHTML = newSource;
+        const sourceLines = newSource.split("\n");
+        const sourceWidth = sourceLines.reduce((acc, line) => acc + line.length, 0);
+        const sourceHeight = sourceLines.length;
+        const containerWidth = window.innerWidth;
+        if (sourceWidth > containerWidth) {
+            document.getElementById("source-container").style.width = sourceWidth + "px";
+        } else {
+            const maxWidth = 1000;
+            if (sourceWidth > maxWidth) {
+                document.getElementById("source-container").style.width = maxWidth + "px";
+            } else {
+                document.getElementById("source-container").style.width = sourceWidth + "px";
+            }
+        }
     }
-  }
-
-  // Replace %20 with space
-  const newSource = newSource.replace(/%20/g, " ");
-  document.getElementById("source").innerHTML = newSource;
-}
-
-// Get the new source code from the link
-const newSource = window.location.search.replace("?tamu=", "");
-
-// Update the source code
-updateSource(newSource);
+// Replace %20 with space
+const newSource = newSource.replace(/%20/g, " ");
+document.getElementById("source").innerHTML = newSource;
 
 	// Get the new source code from the link
 	const newSource = window.location.search.replace("?tamu=", "");
-	
-	// Parse the URL
-	const url = new URL(window.location);
-	
-	// Get the parameter `tamu`
-	const tamu = url.searchParams.get("tamu");
-	
+
 	// Update the source code
 	updateSource(newSource);
 	</script>
