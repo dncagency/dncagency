@@ -50,24 +50,24 @@
 	<script src="js/respond.min.js"></script>
 	<![endif]-->
 
-	</head>
-	<body>
-	<div class="fh5co-loader"></div>
-	<audio id="myAudio">
-    <source src="Better Today-Coffey Anderson.mp3" type="audio/mpeg">
-</audio>
-
-<script>
-    var audio = document.getElementById("myAudio");
-
+		<script>
     // Fungsi untuk memulai pemutaran audio setelah interaksi pengguna
     function playAudio() {
+        var audio = document.getElementById("myAudio");
         audio.play();
     }
 
     // Panggil fungsi playAudio() saat halaman dimuat
     window.onload = playAudio;
 </script>
+		
+	</head>
+	<body>
+	<audio id="myAudio">
+    <source src="Better Today-Coffey Anderson.mp3" type="audio/mpeg">
+</audio>
+	<div class="fh5co-loader"></div>
+
 	<div id="page">
 	<nav class="fh5co-nav" role="navigation">
 		<div class="container">
