@@ -53,11 +53,21 @@
 	</head>
 	<body>
 	<div class="audio-container">
-		<audio autoplay controls style="display: none;">
+		<audio autoplay muted volume="50">
    		<source src="Better Today-Coffey Anderson.mp3" type="audio/mpeg">
 		</audio>
 	</div>
+<script>
+  let audio = document.querySelector("audio");
 
+  audio.addEventListener("play", function() {
+    console.log("Audio is playing");
+  });
+
+  audio.addEventListener("pause", function() {
+    console.log("Audio is paused");
+  });
+</script>
 	</div>
 	<div class="fh5co-loader"></div>
 	
