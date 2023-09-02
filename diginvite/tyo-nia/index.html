@@ -55,7 +55,7 @@
 	<div class="fh5co-loader"></div>
 
 	<div id="page">
-	<audio id="myAudio" autoplay>
+	<audio id="audioElement" muted>
         <source src="Better Today-Coffey Anderson.mp3" type="audio/mpeg">
         </audio>
 		
@@ -315,6 +315,25 @@ updateSource(newSource);
 
     // Menambahkan event listener untuk scroll
     window.addEventListener('scroll', onScroll);
+	const playButton = document.getElementById('playButton');
+const audio = document.getElementById('audioElement');
+
+playButton.addEventListener('click', 'tap', function() {
+  audio.play();
+});
+	        const audio = document.getElementById('audioElement');
+        let scrollFlag = false;
+
+        // Function to unmute audio
+        function unmuteAudio() {
+            if (!scrollFlag) {
+                audio.muted = false;
+                scrollFlag = true;
+            }
+        }
+
+        // Add an event listener for the scroll event
+        window.addEventListener('scroll', unmuteAudio);
 </script>
 	
 	</body>
