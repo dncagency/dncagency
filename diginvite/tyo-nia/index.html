@@ -91,9 +91,11 @@
 <div id="popup">
 	GULIR KE BAWAH
 </div>
-	<audio id="audioElement" muted>
-        <source src="Better Today-Coffey Anderson.mp3" type="audio/mpeg">
-        </audio>
+<audio id="audioElement" muted>
+    <source src="Better Today-Coffey Anderson.mp3" type="audio/mpeg">
+</audio>
+
+<button id="playButton">Play/Pause</button> <!-- Tombol putar -->
 		
 	<nav class="fh5co-nav" role="navigation">
 		<div class="container">
@@ -335,13 +337,19 @@
 </script>
 
 <script>
-    var audio = document.getElementById("myAudio");
+    var audioElement = document.getElementById("audioElement");
     var audioPlayed = false; // Untuk melacak apakah audio sudah diputar
+    var scrollFlag = false; // Untuk melacak apakah sudah ada scroll
 
     // Fungsi untuk memulai pemutaran audio
     function playAudio() {
-        audio.play();
-        audioPlayed = true;
+        if (!audioPlayed) {
+            audioElement.play();
+            audioPlayed = true;
+        } else {
+            audioElement.pause();
+            audioPlayed = false;
+        }
     }
 
     // Fungsi untuk mengecek apakah elemen audio terlihat dalam viewport
@@ -355,31 +363,10 @@
 
     // Fungsi yang dipanggil saat pengguna melakukan scroll
     function onScroll() {
-        if (!audioPlayed && isElementInViewport(audio)) {
+        if (!audioPlayed && isElementInViewport(audioElement)) {
             playAudio();
         }
-    }
 
-    // Menambahkan event listener untuk scroll
-    window.addEventListener('scroll', onScroll);
-
-    // Mendapatkan tombol putar dan elemen audio
-    const playButton = document.getElementById('playButton');
-    const audioElement = document.getElementById('audioElement');
-
-    // Menambahkan event listener untuk klik tombol putar
-    playButton.addEventListener('click', function() {
-        if (audioElement.paused) {
-            audioElement.play();
-        } else {
-            audioElement.pause();
-        }
-    });
-
-    let scrollFlag = false;
-
-    // Function untuk mengaktifkan audio saat melakukan scroll
-    function unmuteAudio() {
         if (!scrollFlag) {
             audioElement.muted = false;
             scrollFlag = true;
@@ -387,7 +374,11 @@
     }
 
     // Menambahkan event listener untuk scroll
-    window.addEventListener('scroll', unmuteAudio);
+    window.addEventListener('scroll', onScroll);
+
+    // Menambahkan event listener untuk klik tombol putar
+    const playButton = document.getElementById('playButton');
+    playButton.addEventListener('click', playAudio);
 </script>
 	
 	</body>
