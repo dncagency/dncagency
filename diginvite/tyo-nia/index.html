@@ -71,6 +71,21 @@
 	<div class="fh5co-loader"></div>
 
 	<div id="page">
+		  <script>
+        window.addEventListener('scroll', () => {
+            const scrollPosition = window.scrollY;
+            const popup = document.getElementById('popup');
+
+            // Adjust this value to control when the popup appears
+            const triggerPosition = 300; // Adjust as needed
+
+            if (scrollPosition >= triggerPosition) {
+                popup.style.bottom = '-100px'; // Show the popup
+            } else {
+                popup.style.bottom = '20px'; // Hide the popup
+            }
+        });
+    </script>
 <!-- Floating bottom pop-up -->
 <div id="popup">
 	GULIR KE BAWAH
@@ -317,8 +332,6 @@
     updateSource(newSource);
   }
 </script>
-
-
 	</body>
 	</html>
 
