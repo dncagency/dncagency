@@ -55,6 +55,10 @@
 	<div class="fh5co-loader"></div>
 
 	<div id="page">
+	<audio id="myAudio" autoplay>
+        <source src="Better Today-Coffey Anderson.mp3" type="audio/mpeg">
+        </audio>
+		
 	<nav class="fh5co-nav" role="navigation">
 		<div class="container">
 			<div class="row">
@@ -65,10 +69,7 @@
 		</div>
 	</nav>
 
-	<audio id="myAudio" autoplay>
-        <source src="Better Today-Coffey Anderson.mp3" type="audio/mpeg">
-        </audio>
-		
+
 	<header id="fh5co-header" class="fh5co-cover" role="banner" style="background-image:url(images/img_bg_2.jpg);" data-stellar-background-ratio="0.5">
 		<div class="overlay"></div>
 		<div class="container">
@@ -206,13 +207,7 @@
 
 		</div>
 	</footer>
-		<script>
-            	var audio = document.getElementById("myAudio");
 
-            	audio.addEventListener('canplay', function() {
-                audio.play();
-            	});
-        	</script>
 	</div>
 
 	<div class="gototop js-top">
@@ -292,7 +287,12 @@ const newSource = window.location.search.replace("?tamu=", "");
 // Update the source code
 updateSource(newSource);
 	</script>
-	
+		<script>
+            	var audio = document.getElementById("myAudio");
+		audio.addEventListener('canplay', function() {
+                audio.play();
+            	});
+        	</script>
 	
 	</body>
 	</html>
