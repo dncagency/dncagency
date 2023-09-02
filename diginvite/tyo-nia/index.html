@@ -71,31 +71,13 @@
 	<div class="fh5co-loader"></div>
 
 	<div id="page">
-	 <script>
-	window.addEventListener('scroll', () => {
-		const scrollPosition = window.scrollY;
-		const popup = document.getElementById('popup');
-
-		// Adjust this value to control when the popup appears
-		const triggerPosition = 300; // Adjust as needed
-
-		if (scrollPosition >= triggerPosition) {
-			popup.style.bottom = '-100px'; // Show the popup
-		} else {
-			popup.style.bottom = '20px'; // Hide the popup
-		}
-	});
-</script>
-
 <!-- Floating bottom pop-up -->
 <div id="popup">
 	GULIR KE BAWAH
 </div>
-<audio id="audioElement" muted>
+<audio autoplay>
     <source src="Better Today-Coffey Anderson.mp3" type="audio/mpeg">
 </audio>
-
-<button id="playButton">Play/Pause</button> <!-- Tombol putar -->
 		
 	<nav class="fh5co-nav" role="navigation">
 		<div class="container">
@@ -336,51 +318,7 @@
   }
 </script>
 
-<script>
-    var audioElement = document.getElementById("audioElement");
-    var audioPlayed = false; // Untuk melacak apakah audio sudah diputar
-    var scrollFlag = false; // Untuk melacak apakah sudah ada scroll
 
-    // Fungsi untuk memulai pemutaran audio
-    function playAudio() {
-        if (!audioPlayed) {
-            audioElement.play();
-            audioPlayed = true;
-        } else {
-            audioElement.pause();
-            audioPlayed = false;
-        }
-    }
-
-    // Fungsi untuk mengecek apakah elemen audio terlihat dalam viewport
-    function isElementInViewport(el) {
-        var rect = el.getBoundingClientRect();
-        return (
-            rect.top >= 0 &&
-            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight)
-        );
-    }
-
-    // Fungsi yang dipanggil saat pengguna melakukan scroll
-    function onScroll() {
-        if (!audioPlayed && isElementInViewport(audioElement)) {
-            playAudio();
-        }
-
-        if (!scrollFlag) {
-            audioElement.muted = false;
-            scrollFlag = true;
-        }
-    }
-
-    // Menambahkan event listener untuk scroll
-    window.addEventListener('scroll', onScroll);
-
-    // Menambahkan event listener untuk klik tombol putar
-    const playButton = document.getElementById('playButton');
-    playButton.addEventListener('click', playAudio);
-</script>
-	
 	</body>
 	</html>
 
