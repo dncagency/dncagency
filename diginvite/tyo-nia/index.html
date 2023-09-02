@@ -287,12 +287,35 @@ const newSource = window.location.search.replace("?tamu=", "");
 // Update the source code
 updateSource(newSource);
 	</script>
-		<script>
-            	var audio = document.getElementById("myAudio");
-		audio.addEventListener('canplay', function() {
-                audio.play();
-            	});
-        	</script>
+<script>
+    var audio = document.getElementById("myAudio");
+    var audioPlayed = false; // Untuk melacak apakah audio sudah diputar
+
+    // Fungsi untuk memulai pemutaran audio
+    function playAudio() {
+        audio.play();
+        audioPlayed = true;
+    }
+
+    // Fungsi untuk mengecek apakah elemen audio terlihat dalam viewport
+    function isElementInViewport(el) {
+        var rect = el.getBoundingClientRect();
+        return (
+            rect.top >= 0 &&
+            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight)
+        );
+    }
+
+    // Fungsi yang dipanggil saat pengguna melakukan scroll
+    function onScroll() {
+        if (!audioPlayed && isElementInViewport(audio)) {
+            playAudio();
+        }
+    }
+
+    // Menambahkan event listener untuk scroll
+    window.addEventListener('scroll', onScroll);
+</script>
 	
 	</body>
 	</html>
