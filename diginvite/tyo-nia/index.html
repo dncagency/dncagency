@@ -293,36 +293,47 @@
     });
 	</script>
 <script>
-// Get the source code of the HTML document
-const source = document.querySelector("body").innerHTML;
-
-// Create a function to update the source code
-function updateSource(newSource) {
-  // Replace %20 with space
-  newSource = decodeURIComponent(newSource.replace(/\+/g, " "));
-  
-  document.getElementById("source").textContent = newSource;
-  const sourceLines = newSource.split("\n");
-  const sourceWidth = sourceLines.reduce((acc, line) => Math.max(acc, line.length), 0);
-  const sourceHeight = sourceLines.length;
-  const containerWidth = window.innerWidth;
-  const maxWidth = 1000;
-
-  if (sourceWidth > containerWidth) {
-    document.getElementById("source-container").style.width = sourceWidth + "px";
-  } else if (sourceWidth > maxWidth) {
-    document.getElementById("source-container").style.width = maxWidth + "px";
-  } else {
-    document.getElementById("source-container").style.width = sourceWidth + "px";
+  // Function to update the source code
+  function updateSource(newSource) {
+    // Replace %20 with space
+    newSource = decodeURIComponent(newSource.replace(/\+/g, " "));
+    
+    // Get the DOM elements
+    const sourceContainer = document.getElementById("source-container");
+    const sourceElement = document.getElementById("source");
+    
+    // Set the source code and split it into lines
+    sourceElement.textContent = newSource;
+    const sourceLines = newSource.split("\n");
+    
+    // Calculate source width and height
+    const sourceWidth = sourceLines.reduce((acc, line) => Math.max(acc, line.length), 0);
+    const sourceHeight = sourceLines.length;
+    
+    // Define container width limits
+    const containerWidth = window.innerWidth;
+    const maxWidth = 1000;
+    
+    // Set container width based on source width and limits
+    if (sourceWidth > containerWidth) {
+      sourceContainer.style.width = sourceWidth + "px";
+    } else if (sourceWidth > maxWidth) {
+      sourceContainer.style.width = maxWidth + "px";
+    } else {
+      sourceContainer.style.width = sourceWidth + "px";
+    }
   }
-}
 
-// Get the new source code from the link
-const newSource = window.location.search.replace("?tamu=", "");
+  // Get the new source code from the URL parameter
+  const urlParams = new URLSearchParams(window.location.search);
+  const newSource = urlParams.get("tamu");
 
-// Update the source code
-updateSource(newSource);
-	</script>
+  // Update the source code
+  if (newSource !== null) {
+    updateSource(newSource);
+  }
+</script>
+
 <script>
     var audio = document.getElementById("myAudio");
     var audioPlayed = false; // Untuk melacak apakah audio sudah diputar
