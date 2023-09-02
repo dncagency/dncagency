@@ -351,25 +351,32 @@ updateSource(newSource);
 
     // Menambahkan event listener untuk scroll
     window.addEventListener('scroll', onScroll);
-	const playButton = document.getElementById('playButton');
-const audio = document.getElementById('audioElement');
 
-playButton.addEventListener('click', 'tap', function() {
-  audio.play();
-});
-	        const audio = document.getElementById('audioElement');
-        let scrollFlag = false;
+    // Mendapatkan tombol putar dan elemen audio
+    const playButton = document.getElementById('playButton');
+    const audioElement = document.getElementById('audioElement');
 
-        // Function to unmute audio
-        function unmuteAudio() {
-            if (!scrollFlag) {
-                audio.muted = false;
-                scrollFlag = true;
-            }
+    // Menambahkan event listener untuk klik tombol putar
+    playButton.addEventListener('click', function() {
+        if (audioElement.paused) {
+            audioElement.play();
+        } else {
+            audioElement.pause();
         }
+    });
 
-        // Add an event listener for the scroll event
-        window.addEventListener('scroll', unmuteAudio);
+    let scrollFlag = false;
+
+    // Function untuk mengaktifkan audio saat melakukan scroll
+    function unmuteAudio() {
+        if (!scrollFlag) {
+            audioElement.muted = false;
+            scrollFlag = true;
+        }
+    }
+
+    // Menambahkan event listener untuk scroll
+    window.addEventListener('scroll', unmuteAudio);
 </script>
 	
 	</body>
