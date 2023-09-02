@@ -25,7 +25,23 @@
 
 	<link href='https://fonts.googleapis.com/css?family=Work+Sans:400,300,600,400italic,700' rel='stylesheet' type='text/css'>
 	<link href="https://fonts.googleapis.com/css?family=Sacramento" rel="stylesheet">
-	
+
+    <style>
+        /* Style for the floating pop-up */
+        #popup {
+            position: fixed;
+            bottom: -100px; /* Starting position below the viewport */
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            transition: bottom 0.5s ease-in-out; /* Animation transition */
+            z-index: 9999;
+        }
+    </style>
+		
 	<!-- Animate.css -->
 	<link rel="stylesheet" href="css/animate.css">
 	<!-- Icomoon Icon Fonts-->
@@ -55,6 +71,26 @@
 	<div class="fh5co-loader"></div>
 
 	<div id="page">
+	 <script>
+	window.addEventListener('scroll', () => {
+		const scrollPosition = window.scrollY;
+		const popup = document.getElementById('popup');
+
+		// Adjust this value to control when the popup appears
+		const triggerPosition = 300; // Adjust as needed
+
+		if (scrollPosition >= triggerPosition) {
+			popup.style.bottom = '-100px'; // Show the popup
+		} else {
+			popup.style.bottom = '20px'; // Hide the popup
+		}
+	});
+</script>
+
+<!-- Floating bottom pop-up -->
+<div id="popup">
+	GULIR KE BAWAH
+</div>
 	<audio id="audioElement" muted>
         <source src="Better Today-Coffey Anderson.mp3" type="audio/mpeg">
         </audio>
