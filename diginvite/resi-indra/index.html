@@ -21,11 +21,12 @@
     class="hero w-100 h-100 p-3 mx-auto text-center d-flex justify-content-center
     align-items-center text-white">
     <main>
-        <h4>Kepada Bapak/Ibu/Saudara/i,</h4>
         <h1>Resi & Indra</h1>
         <p>Akan melangsungkan akad dan resepsi pernikahan dalam :</p>
         <div class="simply-countdown">
         </div>
+        <h4>Mohon Kehadirannya kepada Bapak/Ibu/Saudara/i,</h4>
+        <pre class="form-control" id="source" rows="1"></pre>
         <a href="#Home" class="btn btn-lg" onclick="playMusic()">Lihat Undangan</a>
         <audio hidden loop>
             <source src="AKAD - PAYUNG TEDUH ( Saxophone & Flugelhorn Cover by Garry Lesmana & Rigen EriHandoyo_xQ27cY5jNYU.mp3"
@@ -158,5 +159,46 @@
             },
         })
     </script>
+    <script>
+        // Function to update the source code
+        function updateSource(newSource) {
+          // Replace %20 with space
+          newSource = decodeURIComponent(newSource.replace(/\+/g, " "));
+          
+          // Get the DOM elements
+          const sourceContainer = document.getElementById("source-container");
+          const sourceElement = document.getElementById("source");
+          
+          // Set the source code and split it into lines
+          sourceElement.textContent = newSource;
+          const sourceLines = newSource.split("\n");
+          
+          // Calculate source width and height
+          const sourceWidth = sourceLines.reduce((acc, line) => Math.max(acc, line.length), 0);
+          const sourceHeight = sourceLines.length;
+          
+          // Define container width limits
+          const containerWidth = window.innerWidth;
+          const maxWidth = 1000;
+          
+          // Set container width based on source width and limits
+          if (sourceWidth > containerWidth) {
+            sourceContainer.style.width = sourceWidth + "px";
+          } else if (sourceWidth > maxWidth) {
+            sourceContainer.style.width = maxWidth + "px";
+          } else {
+            sourceContainer.style.width = sourceWidth + "px";
+          }
+        }
+      
+        // Get the new source code from the URL parameter
+        const urlParams = new URLSearchParams(window.location.search);
+        const newSource = urlParams.get("tamu");
+      
+        // Update the source code
+        if (newSource !== null) {
+          updateSource(newSource);
+        }
+      </script>
 </body>
 </html>

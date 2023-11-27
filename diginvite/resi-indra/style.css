@@ -35,11 +35,14 @@ body {
 
 .hero h1 {
     font-family: 'Leckerli One', cursive;
-    font-size: 2.4rem;
+    font-size: 8rem;
+}
+.hero h4 {
+    margin-top: 2rem;
 }
 
 .hero p {
-    font-size: 1rem;
+    font-size: 1.8rem;
 }
 
 .hero a {
