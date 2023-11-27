@@ -151,10 +151,14 @@ body {
     padding-top: 2rem;
     margin-bottom: 1rem;
 }
+.info .maps p {
+    color: white;
+    padding: 2rem;
+    font-weight: bold;
+}
 .info .maps iframe {
     box-shadow: var(--pink);
     border-radius: 2%;
-    padding-bottom: 2rem;
 }
 
 /* media query */
