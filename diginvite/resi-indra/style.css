@@ -1,0 +1,222 @@
+:root {
+    --pink: #f14e95;
+    --bg: #0a0a0a;
+    --shadow: 0 2px 2px rgba(0, 0, 0, 0.966);
+}
+
+body {
+    font-size: 1.2rem;
+    font-family: 'Work Sans', sans-serif;
+    min-height: 2000px;
+}
+
+.hero ::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(img/wedding1.jpg);
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+    filter: blur(10px);
+}
+
+.hero h1, .hero h4, .hero p {
+    text-shadow: var(--shadow);
+}
+
+.hero {
+    position: relative;
+    min-height: 100vh;
+}
+
+.hero h1 {
+    font-family: 'Leckerli One', cursive;
+    font-size: 2.4rem;
+}
+
+.hero p {
+    font-size: 1rem;
+}
+
+.hero a {
+    color: var(--pink);
+    background-color: white;
+    margin-top: 30px;
+}
+
+.hero a:hover {
+    background-color: var(--pink);
+    color: white;
+}
+
+.mynavbar {
+    background-color: #f14e95d0 !important;
+}
+.navbar-brand {
+    font-family: 'Leckerli One', cursive;
+    color: white;
+}
+
+.offcanvas {
+    max-width: 50%;
+}
+.offcanvas-body a {
+    color: white;
+}
+.container-fluid .navbar-toggler button {
+    color: white;
+}
+
+.Home {
+    background-image: url(img/bg3.jpg);
+    background-size: cover;
+    min-height: 100vh;
+    margin-top: -2%;
+    padding-top: 15rem;
+    padding-bottom: 15rem;
+}
+.Home h2 {
+    color: var(--pink);
+    font-family: 'Leckerli One', cursive;
+    font-size: 3rem;
+    font-weight: bold;
+}
+.Home h3 {
+    color: #444444;
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+}
+.Home p {
+    font-size: 2rem;
+    color: #444444;
+}
+
+.Home .couple {
+    margin-top: 30px;
+}
+.Home .couple h3 {
+    font-family: 'Leckerli One', cursive;
+    color: var(--pink);
+    font-size: 3rem;
+}
+.Home .heart i {
+    font-size: 5rem;
+    margin: 5rem;
+    color: var(--pink);
+    text-shadow: var(--shadow);
+}
+
+.info {
+    background-image: url(img/bg3.jpg);
+    background-size: cover;
+    min-height: 100vh;
+    margin-top: -2%;
+    padding-top: 15rem;
+    padding-bottom: 15rem;
+}
+.info h2 {
+    font-family: 'Leckerli One', cursive;
+    font-size: 3rem;
+    color: var(--pink);
+}
+.info h3 {
+    font-family: 'Leckerli One', cursive;
+    font-size: 2rem;
+}
+.info p {
+    font-size: 1.5rem;
+}
+.info .akad {
+    margin-top: 2rem;
+}
+.info .resepsi {
+    margin-top: 2rem;
+}
+.info .maps {
+    margin-top: 3rem;
+    background-color:#f14e95a8;
+    border-radius: 2%;
+}
+.info .maps h4 {
+    font-family: 'Leckerli One', cursive;
+    color: white;
+    font-size: 1.5rem;
+    padding-top: 2rem;
+    margin-bottom: 1rem;
+}
+.info .maps iframe {
+    box-shadow: var(--pink);
+    border-radius: 2%;
+    padding-bottom: 2rem;
+}
+
+/* media query */
+/* laptop */
+
+@media (max-width: 992px) {
+    html {
+        font-size: 75%;
+    }
+    .simply-countdown > .simply-section {
+        padding: 50px;
+    }
+    .simply-countdown > .simply-section .simply-amount {
+        font-size: 1.4rem;
+    }
+    .simply-countdown > .simply-section .simply-word {
+         display: block;
+         text-align: center;
+    }
+    
+       
+}
+
+/* tablet */
+
+@media (max-width: 768px) {
+    html {
+        font-size: 75%;
+    }
+    .simply-countdown > .simply-section {
+        padding: 30px;
+        margin: 10px;
+    }
+    .simply-countdown > .simply-section .simply-amount {
+        font-size: 1,6rem;
+    }
+    .simply-countdown > .simply-section .simply-word {
+         display: block;
+         text-align: center;
+    }
+    .offcanvas-body {
+        font-size: 2rem;
+        background-color: var(--pink);
+    }      
+}
+
+/* mobile phone */
+
+@media (max-width: 576px) {
+    html {
+        font-size: 55%;
+    }
+    .simply-countdown > .simply-section {
+        padding: 0px;
+        margin: 5px;
+    }
+    .simply-countdown > .simply-section .simply-amount {
+        font-size: 1.6rem;
+    }
+    .simply-countdown > .simply-section .simply-word {
+         display: block;
+         text-align: center;
+    }
+    .offcanvas-body {
+        font-size: 2rem;
+        background-color: var(--pink);
+    }   
+}
