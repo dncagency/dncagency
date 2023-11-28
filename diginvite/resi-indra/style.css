@@ -133,14 +133,19 @@ body {
 .info p {
     font-size: 1.5rem;
 }
-.info .akad {
-    margin-top: 2rem;
+
+.info .card {
+    background-color: #f14e95a8 !important;
+    color: white !important;
+    border: 1px solid white;
+    margin-bottom: 2rem;
+    border-radius: 10px;
 }
-.info .resepsi {
-    margin-top: 2rem;
+.info .card .card-header {
+    font-family: 'Leckerli One', cursive;
 }
+
 .info .maps {
-    margin-top: 3rem;
     background-color:#f14e95a8;
     border-radius: 2%;
 }
