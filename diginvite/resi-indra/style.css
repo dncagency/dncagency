@@ -138,7 +138,7 @@ body {
     background-color: #f14e95a8 !important;
     font-weight: bold !important;
     color: white !important;
-    border: 1px solid white;
+    border: 2px solid white;
     margin-bottom: 2rem;
     border-radius: 10px;
 }
@@ -149,20 +149,30 @@ body {
 .info .card .card-body {
     font-size: 1rem;
 }
+.info .card .card-body i {
+    font-size: 2rem;
+}
 
 .info .maps {
     background-color:#f14e95a8;
-    border-radius: 2%;
+    border: 2px solid white;
+    border-radius: 10px;
+
 }
 .info .maps h4 {
     font-family: 'Leckerli One', cursive;
     color: white;
     font-size: 2rem;
+    font-weight: bold;
     padding-top: 2rem;
     margin-bottom: 1rem;
 }
 .info p {
-    color: black;
+    border: 2px solid white;
+    padding: 1rem;
+    border-radius: 10px;
+    background-color: #f14e95a8;
+    color: white;
     margin-top: 2rem;
     font-weight: bold;
 }
