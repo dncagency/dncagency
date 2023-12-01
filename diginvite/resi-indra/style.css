@@ -146,6 +146,7 @@ body {
 .info .card .card-header {
     font-family: 'Leckerli One', cursive;
     font-size: 2rem;
+    border: 0.01rem solid white;
 }
 .info .card .card-body {
     font-size: 1rem;
