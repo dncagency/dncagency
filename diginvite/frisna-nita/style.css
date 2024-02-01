@@ -1,0 +1,354 @@
+:root {
+    --pink: #f14e95;
+    --blue: #36b3e4;
+    --bg: #0a0a0a;
+    --shadow: 0 2px 2px rgb(0, 0, 0);
+}
+
+body {
+    font-size: 1.2rem;
+    font-family: 'Work Sans', sans-serif;
+    min-height: 2000px;
+}
+
+.hero ::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(img/cover.jpg);
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+}
+
+.hero h1, .hero h4, .hero p {
+    text-shadow: var(--shadow);
+}
+
+.hero {
+    position: relative;
+    min-height: 100vh;
+}
+
+.hero h1 {
+    font-family: 'Leckerli One', cursive;
+    font-size: 5rem;
+    margin-bottom: 300px;
+}
+.hero h4 {
+}
+
+.hero p {
+    font-size: 1.8rem;
+    margin-top: 2rem;
+}
+
+.hero a {
+    color: var(--blue);
+    background-color: white;
+    margin-bottom: 4rem;
+}
+
+
+.hero a:hover {
+    background-color: var(--blue);
+    color: white;
+    margin-bottom: 2rem;
+}
+
+
+.Home {
+    position: relative;
+    background-color: #36b3e4;
+    background-size: cover;
+    min-height: 100vh;
+    text-align: center; /* Rata tengah konten di dalam .Home */
+}
+
+.Home .slideshow {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+}
+
+.Home .judul {
+    font-size: 2rem;
+    position: absolute;
+    top: 10%; /* Posisikan di tengah vertikal */
+    width: 100%;
+    left: 50%; /* Posisikan di tengah horizontal */
+    transform: translate(-50%, -50%); /* Geser ke tengah */
+    z-index: 1; /* Pastikan teks berada di atas gambar */
+    color: white; /* Warna teks */
+    text-shadow: var(--shadow); /* Efek bayangan teks */
+}
+
+.Home img {
+    width: 100%;
+    max-width: 100%; /* Pastikan gambar tidak melebihi lebar .Home */
+    height: auto; /* Biarkan tinggi otomatis menyesuaikan lebar */
+    display: block; /* Hilangkan spasi ekstra di bawah gambar */
+    clip-path: polygon(0 10%, 100% 10%, 100% 100%, 0 100%);
+    margin-top: -18%;
+    border-radius: 0px 0px 200px 200px;
+}
+.Home h1 {
+    font-family: 'Leckerli One', cursive;
+    font-size: 3rem;
+}
+
+.Home h2 {
+    color: var(--pink);
+    font-family: 'Leckerli One', cursive;
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.Home .icon {
+    font-size: 5rem;
+    color: white;
+    padding-top: 2rem;
+}
+.Home h3 {
+    color: white;
+    padding-top: 5px;
+    font-weight: bold;
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+.Home p {
+    font-size: 2rem;
+    color: white;
+}
+
+.Home .ayat {
+margin-top: 10px;
+padding-bottom: 2rem;
+}
+.bismillah{
+    margin-top:10%;
+    max-width: 100%;
+    filter: invert(100%) sepia(100%) saturate(750%) hue-rotate(200deg);
+}
+.couple {
+    padding-top: 50px; /* Atur sesuai kebutuhan */
+    padding-bottom: 50px; /* Atur sesuai kebutuhan */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.couple h2,
+.couple p {
+    text-align: center;
+}
+
+.couple h2 {
+    margin-top: 20px; /* Atur sesuai kebutuhan */
+    font-size: 2rem;
+    font-weight: bold;
+    color: skyblue;
+}
+
+.couple p {
+    font-size: 1.5rem;
+}
+
+.couple .nita {
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+    order: 1; /* Urutan tampilan diubah menjadi 2 untuk rata kanan */
+    width: 48%; /* Atur lebar sesuai kebutuhan */
+}
+.couple .frisna{
+    order: 2; /* Urutan tampilan diubah menjadi 1 untuk rata kiri */
+    width: 48%; /* Atur lebar sesuai kebutuhan */
+}
+.couple .nita1 img {
+    max-width: 100%;
+}
+.couple .frisna1 img {
+    max-width: 100%;
+}
+
+
+
+
+@media (max-width: 768px) {
+    section.couple .frisna,
+    section.couple .nita {
+        float: none;
+        margin: 0 auto 20px auto; /* Atur sesuai kebutuhan */
+    }
+}
+
+
+.info {
+    background-image: url(img/bg3.jpg);
+    background-size: cover;
+    min-height: 100vh;
+    margin-top: -2%;
+    padding-top: 15rem;
+    padding-bottom: 15rem;
+}
+.info h2 {
+    font-family: 'Leckerli One', cursive;
+    font-size: 4rem;
+    color: var(--pink);
+}
+.info h3 {
+    font-family: 'Leckerli One', cursive;
+    font-size: 2rem;
+}
+.info p {
+    font-size: 1.5rem;
+}
+
+.info .card {
+    background-color: #f14e95a8 !important;
+    font-weight: bold !important;
+    color: white !important;
+    border: 2px solid white;
+    margin-bottom: 2rem;
+    border-radius: 10px;
+}
+.info .card .card-header {
+    font-family: 'Leckerli One', cursive;
+    font-size: 2rem;
+    border: 0.01rem solid white;
+}
+.info .card .card-body {
+    font-size: 1rem;
+}
+.info .card .card-body i {
+    font-size: 2rem;
+}
+
+.info .maps {
+    background-color:#f14e95a8;
+    border: 2px solid white;
+    border-radius: 10px;
+
+}
+.info .maps h4 {
+    font-family: 'Leckerli One', cursive;
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+    padding-top: 2rem;
+    margin-bottom: 1rem;
+}
+.info p {
+    border: 2px solid white;
+    padding: 1rem;
+    border-radius: 10px;
+    background-color: #f14e95a8;
+    color: white;
+    margin-top: 2rem;
+    font-style: italic;
+}
+.info .maps iframe {
+    margin-bottom: 1rem;
+    border-radius: 2%;
+    border: 2px solid white;
+}
+
+
+  .form-group {
+    margin-bottom: 10px;
+  }
+  
+  label {
+    display: block;
+  }
+  
+  input[type="text"],
+  textarea,
+  select {
+    width: 100%;
+    padding: 5px;
+  }
+  
+  button .kirim [type="submit"] {
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .comment {
+    margin-top: 20px;
+    border-top: 1px solid #ccc;
+    padding-top: 10px;
+  }
+
+@media (max-width: 992px) {
+    html {
+        font-size: 75%;
+    }
+    .simply-countdown > .simply-section {
+        padding: 50px;
+    }
+    .simply-countdown > .simply-section .simply-amount {
+        font-size: 1.4rem;
+    }
+    .simply-countdown > .simply-section .simply-word {
+         display: block;
+         text-align: center;
+    }
+    
+       
+}
+
+/* tablet */
+
+@media (max-width: 768px) {
+    html {
+        font-size: 75%;
+    }
+    .simply-countdown > .simply-section {
+        padding: 30px;
+        margin: 10px;
+    }
+    .simply-countdown > .simply-section .simply-amount {
+        font-size: 1,6rem;
+    }
+    .simply-countdown > .simply-section .simply-word {
+         display: block;
+         text-align: center;
+    }
+    .offcanvas-body {
+        font-size: 2rem;
+        background-color: var(--pink);
+    }      
+}
+
+/* mobile phone */
+
+@media (max-width: 576px) {
+    html {
+        font-size: 55%;
+    }
+    .simply-countdown > .simply-section {
+        padding: 0px;
+        margin: 5px;
+    }
+    .simply-countdown > .simply-section .simply-amount {
+        font-size: 1.6rem;
+    }
+    .simply-countdown > .simply-section .simply-word {
+         display: block;
+         text-align: center;
+    }
+    .offcanvas-body {
+        font-size: 2rem;
+        background-color: var(--pink);
+    }   
+}
