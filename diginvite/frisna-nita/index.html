@@ -19,39 +19,50 @@
     <section id="hero" 
     class="hero w-100 h-100 p-3 mx-auto text-center d-flex justify-content-center
     align-items-center text-white">
-    <main>
-        <h3>The Wedding of :</h3>
-        <h1>Frisna & Nita</h1>
-        <p>Akan dilangsungkan dalam:</p>
-        <div class="simply-countdown">
-        </div>
-        <h4>Mohon Kehadirannya kepada Bapak/Ibu/Saudara/i,</h4>
-        <pre class="form-control" id="source" rows="3"></pre>
-        <a href="#Home" class="btn btn-lg" onclick="playMusic()">Lihat Undangan</a>
-        <audio hidden loop>
-            <source src="AKAD - PAYUNG TEDUH ( Saxophone & Flugelhorn Cover by Garry Lesmana & Rigen EriHandoyo_xQ27cY5jNYU.mp3"
-            type="" media=""/>
-        </audio>
-        <script>function playMusic() {
-            // Memutar musik latar
-            document.querySelector("audio").play();
-          }
-          function playMusic() {
-        // Memutar musik latar
-        document.querySelector("audio").play();
-        }
-        </script>
-    </main>
-</section>
-
-<section id="Home" class="Home mx-auto text-center justify-content-center text-white">
-    <div class="slideshow">
-        <img src="img/slideshow.gif" alt="">
-        <div class="judul">
-            <h4>The Wedding of :</h4>
+        <main>
+            <h3>The Wedding of :</h3>
             <h1>Frisna & Nita</h1>
+            <p>Akan dilangsungkan dalam:</p>
+            <div class="simply-countdown">
+            </div>
+            <h4>Mohon Kehadirannya kepada Bapak/Ibu/Saudara/i,</h4>
+            <pre class="form-control" id="source" rows="3"></pre>
+            <a href="#Home" class="btn btn-lg" id="btn">Lihat Undangan</a>
+            <!-- <audio hidden loop>
+                <source src="AKAD - PAYUNG TEDUH ( Saxophone & Flugelhorn Cover by Garry Lesmana & Rigen EriHandoyo_xQ27cY5jNYU.mp3"
+                type="" media=""/>
+            </audio> -->
+            
+            <script>
+            // Ambil elemen-elemen yang diperlukan
+            const hero = document.getElementById('hero');
+            const openButton = document.getElementById('btn');
+            const homeSection = document.getElementById('Home');
+        
+            // Tambahkan event listener pada tombol "Buka Undangan"
+            openButton.addEventListener('click', function() {
+                // Sembunyikan hero dengan animasi
+                hero.classList.add('lifted');
+
+                // Gulirkan halaman ke bagian atas section Home
+                homeSection.scrollIntoView({ behavior: 'smooth' });
+
+                // Atur overflow-y pada body menjadi hidden
+                document.body.style.overflowY = 'hidden';
+            });
+
+            </script>
+        </main>
+    </section>
+
+    <section id="Home" class="Home mx-auto text-center justify-content-center text-white">
+        <div class="slideshow">
+            <img src="img/slideshow.gif" alt="">
+            <div class="judul">
+                <h4>The Wedding of :</h4>
+                <h1>Frisna & Nita</h1>
+            </div>
         </div>
-    </div>
             <div class="ayat">
             <div class="row justify-content-center text-center">
                 <div class="col-md-8 col-10 text-center">
@@ -68,6 +79,7 @@
             </div>
         </div>
     </section>
+
     <section id="couple" class="couple">
     <div class="container">
         <div class="row justify-content-center">
@@ -172,58 +184,63 @@
     <section id="comment" class="comment">
         <div class="container">
             <div class="row justify-content-center">
-                <div class="col-md-8 col-10 text-center">
-                    <h2>Form Ucapan Tamu Undangan</h2>
-                    <!-- Tampilkan jumlah komentar di sini -->
-                    <div id="commentCount"></div>
-                    <form id="commentForm">
-                        <div class="form-group">
-                            <label for="name">Nama:</label>
-                            <input type="text" id="name" name="name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Ucapan:</label>
-                            <textarea id="message" name="message" rows="3" required></textarea>
-                        </div>
-                        <div class="form-group">
-                            <label for="attendance">Konfirmasi Kehadiran:</label>
-                            <select id="attendance" name="attendance">
-                                <option value="Hadir">Hadir</option>
-                                <option value="Tidak Hadir">Tidak Hadir</option>
-                            </select>
-                        </div>
-                        <button class="kirim" type="submit">Kirim</button>
-                    </form>
+                <div class="col-md-8 col-10">
+                    <div class="comment-card">
+                        <h2 class="text-center">Form Ucapan Tamu Undangan</h2>
+                        <!-- Tampilkan jumlah komentar di sini -->
+                        <div class="text-center" id="commentCount"></div>
+                        <form id="commentForm" class="comment-form">
+                            <div class="form-group">
+                                <label for="name">Nama:</label>
+                                <input type="text" id="name" name="name" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Ucapan:</label>
+                                <textarea id="message" name="message" rows="3" class="form-control" required></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="attendance">Konfirmasi Kehadiran:</label>
+                                <select id="attendance" name="attendance" class="form-control">
+                                    <option value="Hadir">Hadir</option>
+                                    <option value="Tidak Hadir">Tidak Hadir</option>
+                                </select>
+                            </div>
+                            <button id="kirim" type="submit" class="btn btn-primary">Kirim</button>
+                            <!-- Tombol untuk menampilkan/sembunyikan komentar -->
+                            <button id="toggleComments" class="btn btn-secondary">Tampilkan Komentar</button>
+                        </form>
+                    </div>
     
                     <!-- Tempat menampilkan komentar -->
-                    <div id="comments"></div>
+                    <div id="comments" class="comment-list" style="display: none;">
+                        <!-- Komentar akan ditambahkan di sini -->
+                    </div>
                 </div>
             </div>
         </div>
     </section>
+    
     <script type="module">
     import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.2/firebase-app.js";
     import { getFirestore, collection, addDoc, onSnapshot } from "https://www.gstatic.com/firebasejs/10.7.2/firebase-firestore.js";
-    import { getDatabase, ref, push, onValue } from "https://www.gstatic.com/firebasejs/10.7.2/firebase-database.js";
-
-  const firebaseConfig = {
-    apiKey: "AIzaSyDYdpGudqaGEcMGgx9tdYp784wYqrhuL5U",
-    authDomain: "undangan-digital-c5267.firebaseapp.com",
-    databaseURL: "https://undangan-digital-c5267-default-rtdb.firebaseio.com",
-    projectId: "undangan-digital-c5267",
-    storageBucket: "undangan-digital-c5267.appspot.com",
-    messagingSenderId: "546718529513",
-    appId: "1:546718529513:web:8b58a7327cf001d6ddbd78",
-    measurementId: "G-V82KKLPVRW"
+    
+    const firebaseConfig = {
+    apiKey: "AIzaSyBhFQgSYFS_CVC7rYuPS104UoDOpeuz-jU",
+    authDomain: "diginvite-d7398.firebaseapp.com",
+    projectId: "diginvite-d7398",
+    storageBucket: "diginvite-d7398.appspot.com",
+    messagingSenderId: "107107137467",
+    appId: "1:107107137467:web:2fc4f99aaa7c30fd6f369e",
+    measurementId: "G-FV5YG0WMJE"
   };
-// Inisialisasi Firebase
-const app = initializeApp(firebaseConfig);
-  const dbFirestore = getFirestore(app);
-  const dbRealtime = getDatabase(app);
+    // Inisialisasi Firebase
+    const app = initializeApp(firebaseConfig);
+    const dbFirestore = getFirestore(app);
+    //   const dbRealtime = getDatabase(app);
 
   // Menyimpan komentar ke Firestore saat formulir dikirim
-  const form = document.getElementById('commentForm');
-  form.addEventListener('submit', async (e) => {
+    const form = document.getElementById('commentForm');
+    form.addEventListener('submit', async (e) => {
     e.preventDefault();
     const name = document.getElementById('name').value;
     const message = document.getElementById('message').value;
@@ -243,59 +260,43 @@ const app = initializeApp(firebaseConfig);
     }
   });
 
-  // Menyimpan komentar ke Realtime Database saat formulir dikirim
-  form.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const name = document.getElementById('name').value;
-    const message = document.getElementById('message').value;
-    const attendance = document.getElementById('attendance').value;
+    // Mendengarkan perubahan pada Firestore dan menampilkan komentar serta menghitung commentCount
+    const commentsContainerFirestore = document.getElementById('comments');
+    let commentCount = 0; // Inisialisasi commentCount
 
-    if (name && message) {
-      const newCommentRef = push(ref(dbRealtime, 'comments'));
-      newCommentRef.set({
-        name: name,
-        message: message,
-        attendance: attendance,
-        timestamp: new Date().toISOString()
-      }).then(() => {
-        console.log('Komentar berhasil disimpan di Realtime Database');
-        form.reset();
-      }).catch((error) => {
-        console.error('Error saat menyimpan komentar:', error);
-      });
-    } else {
-      alert('Mohon isi semua kolom.');
-    }
-  });
-
-  // Mendengarkan perubahan pada Firestore dan menampilkan komentar
-  const commentsContainerFirestore = document.getElementById('comments');
-  onSnapshot(collection(dbFirestore, 'comments'), (snapshot) => {
+    onSnapshot(collection(dbFirestore, 'comments'), (snapshot) => {
     commentsContainerFirestore.innerHTML = '';
+    commentCount = 0; // Reset commentCount saat mendapatkan snapshot baru
     snapshot.forEach((doc) => {
-      const commentData = doc.data();
-      const commentItem = document.createElement('div');
-      commentItem.innerHTML = `<strong>${commentData.name}</strong>: ${commentData.message}`;
-      commentsContainerFirestore.appendChild(commentItem);
+        const commentData = doc.data();
+        const commentItem = document.createElement('div');
+        commentItem.classList.add('comment-item'); // Menambahkan class comment-item
+        // Mendapatkan timestamp dan mengonversinya ke dalam format yang diinginkan
+        const timestamp = new Date(commentData.timestamp);
+        const formattedTimestamp = `${timestamp.getDate()}/${timestamp.getMonth() + 1}/${timestamp.getFullYear()}`;
+
+        commentItem.innerHTML = `<strong>${commentData.name}</strong>: ${commentData.message} - ${formattedTimestamp}`;
+        commentsContainerFirestore.appendChild(commentItem);
+        commentCount++; // Menghitung jumlah komentar
     });
-  });
 
-  // Mendengarkan perubahan pada Realtime Database dan menampilkan komentar
-  const commentsContainerRealtime = document.getElementById('comments');
-  onValue(ref(dbRealtime, 'comments'), (snapshot) => {
-    commentsContainerRealtime.innerHTML = '';
-    snapshot.forEach((childSnapshot) => {
-      const childData = childSnapshot.val();
-      const commentItem = document.createElement('div');
-      commentItem.innerHTML = `<strong>${childData.name}</strong>: ${childData.message}`;
-      commentsContainerRealtime.appendChild(commentItem);
+    // Menampilkan jumlah komentar di dalam HTML
+    const commentCountContainer = document.getElementById('commentCount');
+    commentCountContainer.textContent = `Jumlah Komentar: ${commentCount}`;
     });
-  });
-
-
-</script>
-    <script src="firestore.js"></script>
-    <!-- <script src="realtime.js"></script> -->
+    // Menampilkan atau menyembunyikan daftar komentar saat tombol ditekan
+    const toggleCommentsButton = document.getElementById('toggleComments');
+    toggleCommentsButton.addEventListener('click', function() {
+        const commentsContainer = document.getElementById('comments');
+        if (commentsContainer.style.display === 'none' || commentsContainer.style.display === '') {
+            commentsContainer.style.display = 'block';
+            toggleCommentsButton.textContent = 'Sembunyikan Komentar';
+        } else {
+            commentsContainer.style.display = 'none';
+            toggleCommentsButton.textContent = 'Tampilkan Komentar';
+        }
+    });
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>    
