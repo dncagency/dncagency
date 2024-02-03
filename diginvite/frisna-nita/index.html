@@ -14,7 +14,11 @@
     <script src="countdown/simplyCountdown.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>    
+    <script src="script.js"></script>
 </head>
 <body>
     <section id="hero" 
@@ -29,18 +33,16 @@
             </div>
             <h4>Mohon Kehadirannya kepada Bapak/Ibu/Saudara/i,</h4>
             <pre class="form-control" id="source" rows="3"></pre>
-            <a href="#Home" class="btn btn-lg" id="btn">Lihat Undangan</a>
             
-            
-            
-    </div>
-            <script>
-
-            </script>
+            <a href="#Home" class="btn btn-lg" id="btn" onclick="toggleAudio()">Lihat Undangan</a>  
         </main>
+    </div>
     </section>
 
     <section id="Home" class="Home mx-auto text-center justify-content-center text-white">
+        <audio id="myAudio" controls autoplay hidden>
+            <source src="Akad  Payung Teduh Desmond Amos ft Brigitta  Rioktag.mp3" type="audio/mpeg">
+        </audio>    
         <div class="slideshow">
             <img src="img/slideshow.gif" alt="">
             <div class="judul">
@@ -60,38 +62,6 @@
                      rasa kasih dan sayang.":</p>  
                 </div>
                 </div>
-                <script>
-                        // JavaScript
-                    document.addEventListener("DOMContentLoaded", function() {
-                        // Function to check if element is in viewport
-                        function isInViewport(element) {
-                            const rect = element.getBoundingClientRect();
-                            return (
-                                rect.top >= 0 &&
-                                rect.left >= 0 &&
-                                rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-                                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-                            );
-                        }
-                    
-                        // Function to handle scroll event
-                        function handleScroll() {
-                            const ayatElement = document.querySelector('.ayat');
-                            if (isInViewport(ayatElement)) {
-                                ayatElement.classList.add('animate');
-                            } else {
-                                ayatElement.classList.remove('animate');
-                            }
-                        }
-                    
-                        // Add scroll event listener
-                        window.addEventListener('scroll', handleScroll);
-                    
-                        // Initial check on page load
-                        handleScroll();
-                    });
-                    
-                </script>
             </div>
         </div>
     </section>
@@ -107,43 +77,10 @@
                 </div>
             </div>
         </div>
-            <script>// JavaScript
-            document.addEventListener("DOMContentLoaded", function() {
-                // Function to check if element is in viewport
-                function isInViewport(element) {
-                    const rect = element.getBoundingClientRect();
-                    return (
-                        rect.top >= 0 &&
-                        rect.left >= 0 &&
-                        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-                        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-                    );
-                }
-            
-                // Function to handle scroll event
-                function handleScroll() {
-                    const coupleRows = document.querySelectorAll('.couple-row');
-                    coupleRows.forEach(row => {
-                        if (isInViewport(row)) {
-                            row.classList.add('animate');
-                        } else {
-                            row.classList.remove('animate');
-                        }
-                    });
-                }
-            
-                // Add scroll event listener
-                window.addEventListener('scroll', handleScroll);
-            
-                // Initial check on page load
-                handleScroll();
-            });
-
-            </script>
 
         <div class="container">
             <div class="row text-center">
-                <div class="nita">
+                <div class="nita animate__animated animate__fadeInRight animate__slow">
                     <div class="nita1">
                         <img src="img/nita1.JPG" alt="">
                     </div>
@@ -151,7 +88,7 @@
                     <h3>Fhiyonita Oktarianie. S, S. Tr.Keb</h3>
                     <h4>Putri Bungsu dari Bapak Simin, S.Sos & Ibu Nurazani</h4>
                 </div>
-                <div class="frisna">
+                <div class="frisna animate__animated animate__fadeInLeft animate__slow">
                     <div class="frisna1">
                         <img src="img/frisna1.JPG" alt="">
                     </div>
@@ -161,45 +98,6 @@
                 </div>
             </div>
         </div>
-            <script>
-                // Fungsi untuk memeriksa apakah elemen masuk ke dalam viewport
-                function isElementInViewport(el) {
-                    var rect = el.getBoundingClientRect();
-                    return (
-                        rect.top >= 0 &&
-                        rect.left >= 0 &&
-                        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-                        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-                    );
-                }
-
-                // Fungsi untuk menambahkan kelas animasi saat elemen masuk ke dalam viewport
-                function animateOnScroll() {
-                    var nita = document.querySelector('.couple .nita');
-                    var frisna = document.querySelector('.couple .frisna');
-
-                    // Periksa apakah elemen "nita" masuk ke dalam viewport
-                    if (isElementInViewport(nita)) {
-                        nita.classList.add('animate-slide-in-right');
-                    } else {
-                        nita.classList.remove('animate-slide-in-right');
-                    }
-
-                    // Periksa apakah elemen "frisna" masuk ke dalam viewport
-                    if (isElementInViewport(frisna)) {
-                        frisna.classList.add('animate-slide-in-left');
-                    } else {
-                        frisna.classList.remove('animate-slide-in-left');
-                    }
-                }
-
-                // Panggil fungsi animateOnScroll saat jendela di-scroll
-                window.addEventListener('scroll', animateOnScroll);
-
-                // Panggil fungsi animateOnScroll untuk memeriksa elemen saat halaman dimuat
-                animateOnScroll();
-
-                </script>
     </div>
 </section>
 
@@ -223,7 +121,7 @@
                                     </div>
                                     <div class="col-md-6">
                                         <i class="bi bi-calendar-event d-block"></i>
-                                        <span>Rabtu, 10 Februari 2024</span>
+                                        <span>Rabu, 10 Februari 2024</span>
                                     </div>
                                 </div>    
                             </div>
@@ -263,7 +161,8 @@
                 </p>
             </div>
         </div>
-        </section>
+    </section>
+    
     <section id="story" class="story">
         <div class="container">
             <div class="row">
@@ -375,123 +274,65 @@
     const app = initializeApp(firebaseConfig);
     const dbFirestore = getFirestore(app);
     //   const dbRealtime = getDatabase(app);
+    // Menyimpan komentar ke Firestore saat formulir dikirim
+  const form = document.getElementById('commentForm');
+  form.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const name = document.getElementById('name').value;
+  const message = document.getElementById('message').value;
+  const attendance = document.getElementById('attendance').value;
 
-  // Menyimpan komentar ke Firestore saat formulir dikirim
-    const form = document.getElementById('commentForm');
-    form.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    const name = document.getElementById('name').value;
-    const message = document.getElementById('message').value;
-    const attendance = document.getElementById('attendance').value;
+  try {
+    await addDoc(collection(dbFirestore, 'comments'), {
+      name: name,
+      message: message,
+      attendance: attendance,
+      timestamp: new Date().toISOString()
+    });
+    console.log("Komentar berhasil disimpan di Firestore");
+    form.reset();
+  } catch (error) {
+    console.error("Error adding document: ", error);
+  }
+});
 
-    try {
-      await addDoc(collection(dbFirestore, 'comments'), {
-        name: name,
-        message: message,
-        attendance: attendance,
-        timestamp: new Date().toISOString()
-      });
-      console.log("Komentar berhasil disimpan di Firestore");
-      form.reset();
-    } catch (error) {
-      console.error("Error adding document: ", error);
-    }
+  // Mendengarkan perubahan pada Firestore dan menampilkan komentar serta menghitung commentCount
+  const commentsContainerFirestore = document.getElementById('comments');
+  let commentCount = 0; // Inisialisasi commentCount
+
+  onSnapshot(collection(dbFirestore, 'comments'), (snapshot) => {
+  commentsContainerFirestore.innerHTML = '';
+  commentCount = 0; // Reset commentCount saat mendapatkan snapshot baru
+  snapshot.forEach((doc) => {
+      const commentData = doc.data();
+      const commentItem = document.createElement('div');
+      commentItem.classList.add('comment-item'); // Menambahkan class comment-item
+      // Mendapatkan timestamp dan mengonversinya ke dalam format yang diinginkan
+      const timestamp = new Date(commentData.timestamp);
+      const formattedTimestamp = `${timestamp.getDate()}/${timestamp.getMonth() + 1}/${timestamp.getFullYear()}`;
+
+      commentItem.innerHTML = `<strong>${commentData.name}</strong>: ${commentData.message} - ${formattedTimestamp}`;
+      commentsContainerFirestore.appendChild(commentItem);
+      commentCount++; // Menghitung jumlah komentar
   });
 
-    // Mendengarkan perubahan pada Firestore dan menampilkan komentar serta menghitung commentCount
-    const commentsContainerFirestore = document.getElementById('comments');
-    let commentCount = 0; // Inisialisasi commentCount
-
-    onSnapshot(collection(dbFirestore, 'comments'), (snapshot) => {
-    commentsContainerFirestore.innerHTML = '';
-    commentCount = 0; // Reset commentCount saat mendapatkan snapshot baru
-    snapshot.forEach((doc) => {
-        const commentData = doc.data();
-        const commentItem = document.createElement('div');
-        commentItem.classList.add('comment-item'); // Menambahkan class comment-item
-        // Mendapatkan timestamp dan mengonversinya ke dalam format yang diinginkan
-        const timestamp = new Date(commentData.timestamp);
-        const formattedTimestamp = `${timestamp.getDate()}/${timestamp.getMonth() + 1}/${timestamp.getFullYear()}`;
-
-        commentItem.innerHTML = `<strong>${commentData.name}</strong>: ${commentData.message} - ${formattedTimestamp}`;
-        commentsContainerFirestore.appendChild(commentItem);
-        commentCount++; // Menghitung jumlah komentar
-    });
-
-    // Menampilkan jumlah komentar di dalam HTML
-    const commentCountContainer = document.getElementById('commentCount');
-    commentCountContainer.textContent = `Jumlah Komentar: ${commentCount}`;
-    });
-    // Menampilkan atau menyembunyikan daftar komentar saat tombol ditekan
-    const toggleCommentsButton = document.getElementById('toggleComments');
-    toggleCommentsButton.addEventListener('click', function() {
-        const commentsContainer = document.getElementById('comments');
-        if (commentsContainer.style.display === 'none' || commentsContainer.style.display === '') {
-            commentsContainer.style.display = 'block';
-            toggleCommentsButton.textContent = 'Sembunyikan Komentar';
-        } else {
-            commentsContainer.style.display = 'none';
-            toggleCommentsButton.textContent = 'Tampilkan Komentar';
-        }
-    });
+  // Menampilkan jumlah komentar di dalam HTML
+  const commentCountContainer = document.getElementById('commentCount');
+  commentCountContainer.textContent = `Jumlah Komentar: ${commentCount}`;
+  });
+  // Menampilkan atau menyembunyikan daftar komentar saat tombol ditekan
+  const toggleCommentsButton = document.getElementById('toggleComments');
+  toggleCommentsButton.addEventListener('click', function() {
+      const commentsContainer = document.getElementById('comments');
+      if (commentsContainer.style.display === 'none' || commentsContainer.style.display === '') {
+          commentsContainer.style.display = 'block';
+          toggleCommentsButton.textContent = 'Sembunyikan Komentar';
+      } else {
+          commentsContainer.style.display = 'none';
+          toggleCommentsButton.textContent = 'Tampilkan Komentar';
+      }
+  });
     </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>    
-    <script>
-        simplyCountdown('.simply-countdown', {
-            year: 2024, // required
-            month: 2, // required
-            day: 10, // required
-            hours: 8
-            , // Default is 0 [0-23] integer
-            minutes: 0, // Default is 0 [0-59] integer
-            seconds: 0, // Default is 0 [0-59] integer
-            words: { //words displayed into the countdown
-                days: { singular: 'hari', plural: 'hari' },
-                hours: { singular: 'jam', plural: 'jam' },
-                minutes: { singular: 'menit', plural: 'menit' },
-                seconds: { singular: 'detik', plural: 'detik' }
-            },
-        })
-    </script>
-    <script>
-        // Function to update the source code
-        function updateSource(newSource) {
-        // Replace %20 with space
-        newSource = decodeURIComponent(newSource.replace(/\+/g, " "));
-        
-        // Get the DOM elements
-        const sourceElement = document.getElementById("source");
-        
-        // Set the source code and split it into lines
-        sourceElement.textContent = newSource;
-        const sourceLines = newSource.split("\n");
-        
-        // Calculate source width and height
-        const sourceWidth = sourceLines.reduce((acc, line) => Math.max(acc, line.length), 0);
-        
-        // Define container width limits
-        const maxWidth = 1000;
-        
-        // Set container width based on source width and limits
-        if (sourceWidth > maxWidth) {
-            sourceElement.style.width = maxWidth + "px";
-        } else {
-            sourceElement.style.width = sourceWidth + "px";
-        }
-        }
-
-        // Get the new source code from the URL parameter
-        const urlParams = new URLSearchParams(window.location.search);
-        const newSource = urlParams.get("tamu");
-
-        // Update the source code
-        if (newSource !== null) {
-        updateSource(newSource);
-        }
-
-      </script>
 
     <section id="wedding-gift" class="wedding-gift">
         <div class="container">
@@ -516,10 +357,7 @@
     </section>
     <section id="penutup" class="penutup">
         <h2>Thank you...</h2>
-        <img src="img/cover.JPG" alt="">
-        <div class="cover">
-            <a href="https://dncagency.tech">DNC Agency Indonesia</a>
-        </div>  
+        <span>Designed by <a href="https://dncagency.tech">DNC Agency Indonesia</a></span>
     </section>
 </body>
 </html>
