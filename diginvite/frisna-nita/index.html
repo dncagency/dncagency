@@ -10,15 +10,17 @@
     <link href="https://fonts.googleapis.com/css2?family=Leckerli+One&display=swap" rel="stylesheet">
 
     <!-- SimplyCountdown -->
-    <link rel="stylesheet" href="countdown/simplyCountdown.theme.default.css"/>
+    <link rel="stylesheet" href="countdown/simplyCountdown.theme.default.css">
     <script src="countdown/simplyCountdown.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
 </head>
 <body>
     <section id="hero" 
     class="hero w-100 h-100 p-3 mx-auto text-center d-flex justify-content-center
     align-items-center text-white">
+    <div class="cover-slide">
         <main>
             <h3>The Wedding of :</h3>
             <h1>Frisna & Nita</h1>
@@ -28,28 +30,11 @@
             <h4>Mohon Kehadirannya kepada Bapak/Ibu/Saudara/i,</h4>
             <pre class="form-control" id="source" rows="3"></pre>
             <a href="#Home" class="btn btn-lg" id="btn">Lihat Undangan</a>
-            <!-- <audio hidden loop>
-                <source src="AKAD - PAYUNG TEDUH ( Saxophone & Flugelhorn Cover by Garry Lesmana & Rigen EriHandoyo_xQ27cY5jNYU.mp3"
-                type="" media=""/>
-            </audio> -->
             
+            
+            
+    </div>
             <script>
-            // Ambil elemen-elemen yang diperlukan
-            const hero = document.getElementById('hero');
-            const openButton = document.getElementById('btn');
-            const homeSection = document.getElementById('Home');
-        
-            // Tambahkan event listener pada tombol "Buka Undangan"
-            openButton.addEventListener('click', function() {
-                // Sembunyikan hero dengan animasi
-                hero.classList.add('lifted');
-
-                // Gulirkan halaman ke bagian atas section Home
-                homeSection.scrollIntoView({ behavior: 'smooth' });
-
-                // Atur overflow-y pada body menjadi hidden
-                document.body.style.overflowY = 'hidden';
-            });
 
             </script>
         </main>
@@ -75,7 +60,38 @@
                      rasa kasih dan sayang.":</p>  
                 </div>
                 </div>
-
+                <script>
+                        // JavaScript
+                    document.addEventListener("DOMContentLoaded", function() {
+                        // Function to check if element is in viewport
+                        function isInViewport(element) {
+                            const rect = element.getBoundingClientRect();
+                            return (
+                                rect.top >= 0 &&
+                                rect.left >= 0 &&
+                                rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+                            );
+                        }
+                    
+                        // Function to handle scroll event
+                        function handleScroll() {
+                            const ayatElement = document.querySelector('.ayat');
+                            if (isInViewport(ayatElement)) {
+                                ayatElement.classList.add('animate');
+                            } else {
+                                ayatElement.classList.remove('animate');
+                            }
+                        }
+                    
+                        // Add scroll event listener
+                        window.addEventListener('scroll', handleScroll);
+                    
+                        // Initial check on page load
+                        handleScroll();
+                    });
+                    
+                </script>
             </div>
         </div>
     </section>
@@ -83,32 +99,107 @@
     <section id="couple" class="couple">
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-md-8 col-10 text-center">
-                <img class="bismillah" src="img/bismillah-hijau.png" alt="">
-                <h2>Assalamu’alaikum Wr. Wb.</h2>
-                <p>Tanpa mengurangi rasa hormat, perkenankan kami mengundang Bapak/Ibu/Saudara/i, serta kerabat sekalian, untuk menghadiri acara pernikahan kami:</p>
+            <div class="col-md-10 text-center">
+                <div class="couple-row">
+                    <img class="bismillah" src="img/bismillah-hijau.png" alt="">
+                    <h2 class="salam">Assalamu’alaikum Wr. Wb.</h2>
+                    <p>Tanpa mengurangi rasa hormat, perkenankan kami mengundang Bapak/Ibu/Saudara/i, serta kerabat sekalian, untuk menghadiri acara pernikahan kami:</p>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="container">
-        <div class="row text-center">
-            <div class="nita">
-                <div class="nita1">
-                    <img src="img/nita1.JPG" alt="">
+            <script>// JavaScript
+            document.addEventListener("DOMContentLoaded", function() {
+                // Function to check if element is in viewport
+                function isInViewport(element) {
+                    const rect = element.getBoundingClientRect();
+                    return (
+                        rect.top >= 0 &&
+                        rect.left >= 0 &&
+                        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+                    );
+                }
+            
+                // Function to handle scroll event
+                function handleScroll() {
+                    const coupleRows = document.querySelectorAll('.couple-row');
+                    coupleRows.forEach(row => {
+                        if (isInViewport(row)) {
+                            row.classList.add('animate');
+                        } else {
+                            row.classList.remove('animate');
+                        }
+                    });
+                }
+            
+                // Add scroll event listener
+                window.addEventListener('scroll', handleScroll);
+            
+                // Initial check on page load
+                handleScroll();
+            });
+
+            </script>
+
+        <div class="container">
+            <div class="row text-center">
+                <div class="nita">
+                    <div class="nita1">
+                        <img src="img/nita1.JPG" alt="">
+                    </div>
+                    <h2>The bride</h2>
+                    <h3>Fhiyonita Oktarianie. S, S. Tr.Keb</h3>
+                    <h4>Putri Bungsu dari Bapak Simin, S.Sos & Ibu Nurazani</h4>
                 </div>
-                <h2>The bride</h2>
-                <h3>NITA</h3>
-                <h4>Putri dari Bapak   & Ibu  </h4>
-            </div>
-            <div class="frisna">
-                <div class="frisna1">
-                    <img src="img/frisna1.JPG" alt="">
+                <div class="frisna">
+                    <div class="frisna1">
+                        <img src="img/frisna1.JPG" alt="">
+                    </div>
+                    <h2>The groom</h2>
+                    <h3>Frisnadiyo Handika, S.T</h3>
+                    <h4>Putra Kedua dari Bapak Drs. Yanto & Ibu Evi Andriani</h4>
                 </div>
-                <h2>The groom</h2>
-                <h3>FRISNA</h3>
-                <h4>Putra dari Bapak   & Ibu  </h4>
             </div>
         </div>
+            <script>
+                // Fungsi untuk memeriksa apakah elemen masuk ke dalam viewport
+                function isElementInViewport(el) {
+                    var rect = el.getBoundingClientRect();
+                    return (
+                        rect.top >= 0 &&
+                        rect.left >= 0 &&
+                        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+                    );
+                }
+
+                // Fungsi untuk menambahkan kelas animasi saat elemen masuk ke dalam viewport
+                function animateOnScroll() {
+                    var nita = document.querySelector('.couple .nita');
+                    var frisna = document.querySelector('.couple .frisna');
+
+                    // Periksa apakah elemen "nita" masuk ke dalam viewport
+                    if (isElementInViewport(nita)) {
+                        nita.classList.add('animate-slide-in-right');
+                    } else {
+                        nita.classList.remove('animate-slide-in-right');
+                    }
+
+                    // Periksa apakah elemen "frisna" masuk ke dalam viewport
+                    if (isElementInViewport(frisna)) {
+                        frisna.classList.add('animate-slide-in-left');
+                    } else {
+                        frisna.classList.remove('animate-slide-in-left');
+                    }
+                }
+
+                // Panggil fungsi animateOnScroll saat jendela di-scroll
+                window.addEventListener('scroll', animateOnScroll);
+
+                // Panggil fungsi animateOnScroll untuk memeriksa elemen saat halaman dimuat
+                animateOnScroll();
+
+                </script>
     </div>
 </section>
 
@@ -117,7 +208,7 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-md-8 col-10 text-center">
-                    <h2>Informasi Acara</h2>
+                    <h2>Wedding Event<h2>
                 </div>
             </div>
                 <div class="row justify-content-center mt-4">
@@ -128,11 +219,11 @@
                                 <div class="row justify-content-center">
                                     <div class="col-md-6">
                                         <i class="bi bi-clock d-block"></i>
-                                        <span>15.00 WIB s/d Selesai</span>
+                                        <span>08.00 WIB s/d Selesai</span>
                                     </div>
                                     <div class="col-md-6">
                                         <i class="bi bi-calendar-event d-block"></i>
-                                        <span>Rabu, 24 April 2024</span>
+                                        <span>Rabtu, 10 Februari 2024</span>
                                     </div>
                                 </div>    
                             </div>
@@ -145,11 +236,11 @@
                                 <div class="row justify-content-center">
                                     <div class="col-md-6">
                                         <i class="bi bi-clock d-block"></i>
-                                        <span>08.00 WIB s/d Selesai</span>
+                                        <span>10.00 WIB s/d Selesai</span>
                                     </div>
                                     <div class="col-md-6">
                                         <i class="bi bi-calendar-event d-block"></i>
-                                        <span>Kamis, 25 April 2024</span>
+                                        <span>Sabtu, 10 Februari 2024</span>
                                     </div>
                                 </div>    
                             </div>
@@ -157,15 +248,16 @@
                     </div>
                 </div>
             <div class="row justify-content-center">
-                <div class="col-md-5 col-10 text-center">    
+                <div class="col-md-12 col-12 text-center">    
                     <div class="maps">
                         <h4>Lokasi Acara</h4>
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3982.6688218430463!2d102.17808207386157!3d-3.4305498417271996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e315bee0e22da71%3A0xc7e53a4d028ba295!2sJl.%20Dr.%20Ak.%20Gani%2C%20Kec.%20Arga%20Makmur%2C%20Kabupaten%20Bengkulu%20Utara%2C%20Bengkulu!5e0!3m2!1sid!2sid!4v1701067721706!5m2!1sid!2sid" width="80%" height="200" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d497.8300423078195!2d102.1840560916405!3d-3.437378697477389!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e315beb6dabe10b%3A0xb73b340245e62c4c!2sJl.%20Padat%20Karya%20No.76%2C%20Air%20Merah%2C%20Kec.%20Arga%20Makmur%2C%20Kabupaten%20Bengkulu%20Utara%2C%20Bengkulu%2038611!5e0!3m2!1sid!2sid!4v1706900071027!5m2!1sid!2sid" width="80%" height="200" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        <h5>Jln. Padat Karya No. 77 RT. 14 Desa Karang Anyar II Kec. Kota Argamakmur B/U</h5>
                     </div>
                 </div>
             </div>
             <div class="row justify-content-center">
-                <p class="col-md-5 col-10 text-center">"Diharapkan untuk tidak salah tanggal dan lokasi. Apabila tiba di lokasi namun tidak
+                <p class="col-md-10 col-10 text-center">"Diharapkan untuk tidak salah tanggal dan lokasi. Apabila tiba di lokasi namun tidak
                     ada tanda-tanda sedang dilangsungkan acara pernikahan, boleh jadi Anda salah tanggal
                     atau salah alamat. Mohon periksa kembali detail acara dengan cermat, terima kasih."
                 </p>
@@ -181,12 +273,58 @@
             </div>
         </div>
     </section>
+    
+    <section class="gallery">
+        <div class="text-center">
+            <h2>Gallery<h2>
+        </div>
+        <div class="gallery-list">
+            <div class="item">
+                <img src="FOTO LAMARAN/tf 4.jpg" alt="Foto 1">
+            </div>
+            <div class="item">
+                <img src="FOTO LAMARAN/tf 2.jpg" alt="Foto 2">
+            </div>
+            <div class="item">
+                <img src="FOTO LAMARAN/tf 6.jpg" alt="Foto 3">
+            </div>
+            <div class="item">
+                <img src="FOTO LAMARAN/tf 7.jpg" alt="Foto 4">
+            </div>
+            <div class="item">
+                <img src="FOTO LAMARAN/tf 11.jpg" alt="Foto 5">
+            </div>
+            <div class="item">
+                <img src="FOTO LAMARAN/tf 10.jpg" alt="Foto 6">
+            </div>
+            <div class="item">
+                <img src="FOTO LAMARAN/tf 16.jpg" alt="Foto 8">
+            </div>
+            <div class="item">
+                <img src="FOTO LAMARAN/tf 2.jpg" alt="Foto 9">
+            </div>
+            <div class="item">
+                <img src="FOTO LAMARAN/tf 15.jpg" alt="Foto 7">
+            </div>
+            <div class="item">
+                <img src="FOTO LAMARAN/ARD_9503.jpg" alt="Foto 9">
+            </div>
+            <div class="item">
+                <img src="FOTO LAMARAN/ARD_9514.jpg" alt="Photo 10">
+            </div>
+            <div class="item">
+                <img src="FOTO LAMARAN/ARD_9523.jpg" alt="Photo 11">
+            </div>
+        </div>
+    </section>
+    
+    
     <section id="comment" class="comment">
         <div class="container">
             <div class="row justify-content-center">
-                <div class="col-md-8 col-10">
+                <div class="col-md-12 col-12">
                     <div class="comment-card">
-                        <h2 class="text-center">Form Ucapan Tamu Undangan</h2>
+                        <h2 class="text-center">Beri Ucapan</h2>
                         <!-- Tampilkan jumlah komentar di sini -->
                         <div class="text-center" id="commentCount"></div>
                         <form id="commentForm" class="comment-form">
@@ -320,43 +458,68 @@
     <script>
         // Function to update the source code
         function updateSource(newSource) {
-          // Replace %20 with space
-          newSource = decodeURIComponent(newSource.replace(/\+/g, " "));
-          
-          // Get the DOM elements
-          const sourceContainer = document.getElementById("source-container");
-          const sourceElement = document.getElementById("source");
-          
-          // Set the source code and split it into lines
-          sourceElement.textContent = newSource;
-          const sourceLines = newSource.split("\n");
-          
-          // Calculate source width and height
-          const sourceWidth = sourceLines.reduce((acc, line) => Math.max(acc, line.length), 0);
-          const sourceHeight = sourceLines.length;
-          
-          // Define container width limits
-          const containerWidth = window.innerWidth;
-          const maxWidth = 1000;
-          
-          // Set container width based on source width and limits
-          if (sourceWidth > containerWidth) {
-            sourceContainer.style.width = sourceWidth + "px";
-          } else if (sourceWidth > maxWidth) {
-            sourceContainer.style.width = maxWidth + "px";
-          } else {
-            sourceContainer.style.width = sourceWidth + "px";
-          }
+        // Replace %20 with space
+        newSource = decodeURIComponent(newSource.replace(/\+/g, " "));
+        
+        // Get the DOM elements
+        const sourceElement = document.getElementById("source");
+        
+        // Set the source code and split it into lines
+        sourceElement.textContent = newSource;
+        const sourceLines = newSource.split("\n");
+        
+        // Calculate source width and height
+        const sourceWidth = sourceLines.reduce((acc, line) => Math.max(acc, line.length), 0);
+        
+        // Define container width limits
+        const maxWidth = 1000;
+        
+        // Set container width based on source width and limits
+        if (sourceWidth > maxWidth) {
+            sourceElement.style.width = maxWidth + "px";
+        } else {
+            sourceElement.style.width = sourceWidth + "px";
         }
-      
+        }
+
         // Get the new source code from the URL parameter
         const urlParams = new URLSearchParams(window.location.search);
         const newSource = urlParams.get("tamu");
-      
+
         // Update the source code
         if (newSource !== null) {
-          updateSource(newSource);
+        updateSource(newSource);
         }
+
       </script>
+
+    <section id="wedding-gift" class="wedding-gift">
+        <div class="container">
+            <div class="row col-md-12 col-12"></div>
+            <h2>Wedding Gift</h2>
+            <p>Selamat datang di bagian Wedding Gift kami! Jika Anda ingin memberikan hadiah pernikahan, berikut adalah nomor rekening kami:</p>
+            <div class="account-details">
+                <div class="account">
+                    <img src="img/bri.png" alt="">
+                    <h3>A.n Frisnadiyo Handika</h3>
+                    <p>No. Rekening: </p> 
+                    <p> 0104 4100 508</p>
+                </div>
+                <div class="account">
+                    <img src="img/bri.png" alt="">
+                    <h3>A.n Fhiyonita Oktarianie</h3>
+                    <p>No. Rekening: </p>
+                    <p> 0104 8918 505</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="penutup" class="penutup">
+        <h2>Thank you...</h2>
+        <img src="img/cover.JPG" alt="">
+        <div class="cover">
+            <a href="https://dncagency.tech">DNC Agency Indonesia</a>
+        </div>  
+    </section>
 </body>
 </html>
