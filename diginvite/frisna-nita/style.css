@@ -138,6 +138,33 @@ body {
     opacity: 0;
     transition: opacity 0.5s ease;
 }
+
+/* Animasi untuk mengangkat cover */
+@keyframes liftCover {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-100%);
+    }
+}
+
+/* Section Home */
+#Home {
+    position: relative;
+    background-color: #6cca4f;
+    background-size: cover;
+    min-height: 100vh;
+    text-align: center; /* Rata tengah konten di dalam .Home */
+    z-index: -1; /* Sembunyikan section Home di bawah section Hero */
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+#Home.show {
+    z-index: 2; /* Tampilkan section Home di atas section Hero */
+    opacity: 1;
+}
+
 .ayat.animate {
     opacity: 1;
 }
@@ -184,36 +211,7 @@ body {
     background-color: #fff;
     box-shadow: var(--shadow);
 }
-.animate-slide-in-right {
-    animation: slideInRight 2s ease forwards;
-}
 
-.animate-slide-in-left {
-    animation: slideInLeft 2s ease forwards;
-}
-/* Animasi slide-in dari kanan */
-@keyframes slideInRight {
-    0% {
-        transform: translateX(100%) translateZ(0);
-        opacity: 0;
-    }
-    100% {
-        transform: translateX(0) translateZ(0);
-        opacity: 1;
-    }
-}
-
-/* Animasi slide-in dari kiri */
-@keyframes slideInLeft {
-    0% {
-        transform: translateX(-100%) translateZ(0);
-        opacity: 0;
-    }
-    100% {
-        transform: translateX(0) translateZ(0);
-        opacity: 1;
-    }
-}
 
 /* Menggunakan GPU acceleration */
 .nita, .frisna {
@@ -554,38 +552,37 @@ html {
         max-width: 100%;
         padding-bottom: 10px;
     }
+
     .penutup {
         position:relative;
         background-color: #6cca4f;
-        background-size: cover;
         text-align: center;
-        min-height: 100vh;
+        height: 25vh;
     }
-    .penutup h2 {
+    .penutup h2{
         font-family: 'Leckerli One', cursive;
         font-size: 5rem;
         color: white;
-        position: absolute;
-        top: 10%; /* Posisikan di tengah vertikal */
+        position: relative;
+        padding-bottom: 10px;
+        top: 25%; /* Posisikan di tengah vertikal */
         width: 100%;
         left: 50%; /* Posisikan di tengah horizontal */
         transform: translate(-50%, -50%); /* Geser ke tengah */
-        z-index: 1; /* Pastikan teks berada di atas gambar */
         color: white; /* Warna teks */
         text-shadow: var(--shadow); /* Efek bayangan teks */
     }
-    .penutup img {
-        position: relative;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        max-width: 100%;
-        border-radius: 0px 0px 200px 200px;
-    }
-    .penutup .cover {
-        margin-top: 3rem;
+    .penutup a, span{
+        color: white;
         font-size: 2rem;
-        text-align: center;
-        padding-bottom: 3rem;
-        
+        text-decoration: none;
+        font-weight: 600;
+        font-family: 'Courier New', Courier, monospace;
+    }
+    .penutup a:hover{
+        color: #0a0a0a;
+        font-weight: 900;    
+    }
+    .penutup a{
+        text-decoration: underline;
     }
