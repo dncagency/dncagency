@@ -1,7 +1,7 @@
 /********** Template CSS **********/
 :root {
-    --primary: #3556fb;
-    --secondary: #4777F5;
+    --primary: #132fb6;
+    --secondary: #1541b1;
     --light: #F7FAFF;
     --dark: #1D1D27;
 }
@@ -34,7 +34,7 @@ body::-webkit-scrollbar {
 	height:60px;
 	bottom:40px;
 	left:40px;
-	background-color:#25d366;
+	background-color:#2b95f8;
 	color:#FFF;
 	border-radius:50px;
 	text-align:center;
@@ -137,22 +137,6 @@ h6,
 
 .navbar-light .navbar-brand img {
     max-height: 40px;
-}
-
-.dropdown-menu {
-    border: none;
-    border-radius: 0;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.dropdown-item {
-    color: var(--secondary);
-    text-decoration: none;
-}
-
-.dropdown-item:hover {
-    color: #ffffff;
-    background: var(--secondary);
 }
 
 @media (max-width: 991.98px) {
@@ -378,42 +362,6 @@ h6,
     color: var(--primary);
 }
 
-/*** Testimonial ***/
-.newsletter,
-.testimonial {
-    background:
-        url(../img/bg-top.png),
-        url(../img/bg-bottom.png);
-    background-position:
-        left top,
-        right bottom;
-    background-repeat: no-repeat;
-}
-.testimonial{
-    background: var(--primary);
-}
-
-.testimonial-carousel .owl-item .testimonial-item,
-.testimonial-carousel .owl-item.center .testimonial-item * {
-    transition: .5s;
-}
-
-.testimonial-carousel .owl-item.center .testimonial-item {
-    background: var(--light) !important;
-    border-color: var(--light);
-}
-
-.testimonial-carousel .owl-item.center .testimonial-item * {
-    color: #888888;
-}
-
-.testimonial-carousel .owl-item.center .testimonial-item i {
-    color: var(--primary) !important;
-}
-
-.testimonial-carousel .owl-item.center .testimonial-item h6 {
-    color: var(--dark) !important;
-}
 
 
 
