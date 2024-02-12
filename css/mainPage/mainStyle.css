@@ -463,10 +463,12 @@ h6,
 }
 
 .footer h5 {
+    position: relative;
     color: var(--light);
 }
 
 .footer p {
+    position: relative;
     color: var(--light);
 }
 
@@ -500,11 +502,10 @@ h6,
 }
 
 .footer .button-term {
-    margin-right: 10px;
 }
 
 .footer .button-privacy {
-    margin-right: 10px;
+    margin-left:10px;
 }
 
 .footer .modal-dialog.modal-dialog-scrollable {
@@ -556,17 +557,17 @@ h6,
         display: flex;
         justify-content: center;
     }
-
+    
     .footer .d-flex.pt-2 {
         flex-direction: column;
     }
-
+    
     .footer .button-term,
     .footer .button-privacy {
-        margin-right: 0;
+        position: relative;
         margin-bottom: 10px;
     }
-
+    
     .footer .modal-dialog.modal-dialog-scrollable {
         margin-top: 0;
     }
