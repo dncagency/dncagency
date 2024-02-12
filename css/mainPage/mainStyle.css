@@ -1,7 +1,7 @@
 /********** Template CSS **********/
 :root {
-    --primary: #132fb6;
-    --secondary: #1541b1;
+    --primary: #4564ff;
+    --secondary: #2e95e9;
     --light: #F7FAFF;
     --dark: #1D1D27;
 }
@@ -205,6 +205,8 @@ h6,
 
 .hero img{
     margin-top: -50px;
+    max-width: 100%;
+    width: 500px;
 }
 .hero{
     background: var(--primary);
