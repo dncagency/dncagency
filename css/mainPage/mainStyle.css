@@ -518,7 +518,7 @@ h6,
     
     .footer .button-term,
     .footer .button-privacy {
-        position: absolute;
+        position: relative;
         margin-bottom: 10px;
     }
     
