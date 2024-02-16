@@ -281,6 +281,10 @@ h6,
     left: 3px;
 }
 
+.about img {
+    margin-top:10rem;
+}
+
 /*** about card ***/
 .about-card{
     box-sizing: border-box;
@@ -514,7 +518,7 @@ h6,
     
     .footer .button-term,
     .footer .button-privacy {
-        position: relative;
+        position: absolute;
         margin-bottom: 10px;
     }
     
