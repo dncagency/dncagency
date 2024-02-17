@@ -20,12 +20,12 @@ body::-webkit-scrollbar {
     } */
 
     body::-webkit-scrollbar-thumb {
-    background-color: var(--primary);
+    background-color: var(--dark);
     
     }
     body::-webkit-scrollbar-thumb:hover {
-    background-color: var(--light);
-    outline: 1px solid var(--primary);
+    background-color: var(--dark);
+    outline: 1px solid var(--dark);
     }
 /* Telegram */
 .float{
@@ -210,26 +210,27 @@ h6,
 }
 .hero{
     background: whitesmoke;
+    box-shadow: 0 0 10px #000;
 }
 
 .btn-light{
     background: var(--light);
-    color: var(--primary);
+    color: var(--dark);
     font-weight: bold;
 }
 .btn-light:hover{
-    background: var(--primary);
+    background: var(--dark);
     color: var(--light);
     font-weight: bold;
 }
 .btn-primary{
-    background: var(--primary);
+    background: var(--dark);
     color: var(--light);
     font-weight: bold;
 }
 .btn-primary:hover{
     background: var(--light);
-    color: var(--primary);
+    color: var(--dark);
     font-weight: bold;
 }
 
@@ -414,6 +415,7 @@ h6,
     margin-top: 50px;
     padding-bottom: 50px;
     background-color: whitesmoke;
+    box-shadow: 10px 10px 10px 10px #000;
 }
 
 .footer h5 {
