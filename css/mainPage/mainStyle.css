@@ -124,7 +124,7 @@ h6,
     transition: color 0.3s;
 }
 .navbar-sticky {
-    position: fixed;
+    position: sticky;
     top: 0;
     width: 100%;
     z-index: 1000;
@@ -184,7 +184,6 @@ h6,
 /*** Hero Header ***/
 
 .hero img{
-    margin-top: -50px;
     max-width: 100%;
     width: 500px;
 }
@@ -192,7 +191,6 @@ h6,
     background: whitesmoke;
     box-shadow: 0 0 10px #000;
 }
-
 .btn-light{
     background: var(--light);
     color: var(--dark);
@@ -214,57 +212,7 @@ h6,
     font-weight: bold;
 }
 
-** Section Title **
-.section-title::before {
-    position: absolute;
-    content: "";
-    width: 45px;
-    height: 4px;
-    bottom: 0;
-    left: 0;
-    background: var(--dark);
-}
 
-.section-title::after {
-    position: absolute;
-    content: "";
-    width: 4px;
-    height: 4px;
-    bottom: 0;
-    left: 50px;
-    background: var(--dark);
-    display: none;
-}
-
-.section-title.text-center::before {
-    left: 50%;
-    margin-left: -25px;
-}
-
-.section-title.text-center::after {
-    left: 50%;
-    margin-left: 25px;
-}
-
-.section-title h6::before,
-.section-title h6::after {
-    position: absolute;
-    content: "";
-    width: 10px;
-    height: 10px;
-    top: 2px;
-    left: 0;
-    background:var(--primary);
-}
-
-.section-title h6::after {
-    top: 5px;
-    left: 3px;
-}
-
-.about img {
-    margin-top:10rem;
-}
 
 /*** about card ***/
 .about-card{
@@ -433,18 +381,13 @@ h6,
     box-shadow: none;
 }
 
-.footer .d-flex.pt-2 {
-    margin-top: 10px;
-}
 
 .footer .button-term {
     width: 100%;
-    margin:10px;
 }
 
 .footer .button-privacy {
     width: 100%;
-    margin:10px;
 }
 
 .footer .modal-dialog.modal-dialog-scrollable {
@@ -481,7 +424,14 @@ h6,
 .copyright{
     margin: 20px;
 }
-
+.modal-button a {
+    font-weight: bold;
+    color: #000;
+}
+.modal-button a:hover {
+    font-weight:lighter;
+    color: #000;
+}
 .copyright p a:hover{
     font-weight: bold;
 }
@@ -495,6 +445,9 @@ h6,
     .footer .social-media-buttons {
         display: flex;
         justify-content: center;
+    }
+    .modal-button {
+        text-align: center;
     }
     
     .footer .d-flex.pt-2 {

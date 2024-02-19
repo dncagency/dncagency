@@ -262,30 +262,6 @@ h6,
     margin: 10px;
 }
 
-
-.client .logo img {
-    filter: grayscale(100%);
-    transition: all 0.3s ease-in-out;
-    max-height: 200px;
-    max-width: 200px;
-    /* Nilai grayscale dapat disesuaikan, 0% berarti tidak ada efek grayscale, 100% berarti logo sepenuhnya grayscale */
-    /* Anda juga dapat menggunakan filter: grayscale(1); untuk efek grayscale ringan */
-}
-
-/* Efek grayscale saat logo di-hover */
-.client .logo:hover img {
-    filter: grayscale(0%);
-    transition: all 0.3s ease-in-out;
-    transform: translateY(-5px);
-    /* Saat di-hover, set filter grayscale menjadi 0% untuk menghapus efek grayscale */
-}
-@media (max-width: 576px) {
-    .client .logo img {
-        max-height: 100px;
-        max-width: 100px;
-    }
-}
-
 /*** Footer ***/
 .footer {
     margin-top: 50px;
@@ -329,18 +305,23 @@ h6,
     box-shadow: none;
 }
 
-.footer .d-flex.pt-2 {
-    margin-top: 10px;
+.modal-button a {
+    text-decoration: none;
+    font-weight: bold;
+    color: #000;
+}
+
+.modal-button a:hover {
+    font-weight: lighter;
+    color: #000;
 }
 
 .footer .button-term {
     width: 100%;
-    margin:10px;
 }
 
 .footer .button-privacy {
     width: 100%;
-    margin:10px;
 }
 
 
@@ -393,7 +374,9 @@ h6,
         display: flex;
         justify-content: center;
     }
-    
+    .modal-button {
+        text-align: center;
+    }
     .footer .d-flex.pt-2 {
         flex-direction: column;
     }
