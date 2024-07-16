@@ -80,7 +80,7 @@
                         </ul>
                     </div>
                     <script>
-                        $('.w-nav-menu').on('click', '.w-nav-link', function(evt) {
+                        $('.navbar').on('click', '.nav-link', function(evt) {
                             if(evt.target.hash !== '') {
                                 $('html, body').animate({ scrollTop: $( evt.target.hash ).offset().top - 130 }, 1000);
                                 return false;
