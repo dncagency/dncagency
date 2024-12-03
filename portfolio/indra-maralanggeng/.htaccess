@@ -1,7 +1,0 @@
-
-#remove html file extension https://dncagency.site/portfolio/indra-maralanggeng/index.html
-to https://dncagency.site/portfolio/indra-maralanggeng
-RewriteEngine On
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteRule ^([^\.]+)$ $1.html [NC, L]
